@@ -1,22 +1,21 @@
 version: '3'
 
 services:
-
-  mediadb:
-    container_name: tezdb
+  db_aristotel:
     image: postgres:12.2
     environment:
-      POSTGRES_DB: db_media
-      POSTGRES_USER: media_user
-      POSTGRES_PASSWORD: media_pass
-
-  mediaweb:
-    container_name: mediaweb
+        POSTGRES_DB: db_aristotel
+        POSTGRES_USER: aristoteluser
+        POSTGRES_PASSWORD: aristotelpass
+  web_aristotel:
     build: .
-    command: python manage.py runserver 0.0.0.0:7000
+    command: python manage.py runserver 0.0.0.0:2000
     volumes:
       - .:/code
     ports:
-      - "7000:7000"
+      - "2000:2000"
     depends_on:
-      - mediadb
+      - db_aristotel
+    env_file:
+      - ./.env.dev
+

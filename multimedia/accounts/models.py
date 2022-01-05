@@ -67,8 +67,7 @@ class Category(models.Model):
         return f"{self.title}"
 
     class Meta:
-        verbose_name = "User"
-        verbose_name_plural = "Users"
+        verbose_name_plural = "Categories"
 
 
 class Music(models.Model):
