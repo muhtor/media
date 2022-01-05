@@ -35,6 +35,9 @@ POST > http://127.0.0.1:8000/user/auth
 
 GET > http://127.0.0.1:8000/user/media
 
+> Authentication required
+*  `Authorization`: Token e36bec45b6c9facdf2d8319a4354698a0c4a7fb7
+
 #### Response body
 
 ```json
